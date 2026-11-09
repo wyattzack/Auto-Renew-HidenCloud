@@ -98,7 +98,7 @@ def send_telegram_notification(status, old_due, new_due, current_ip="未知"):
         "parse_mode": "HTML"
     }
     try:
-        resp = requests.post(url, json=payload, timeout=10, proxies=REQUESTS_PROXIES)
+        resp = requests.post(url, json=payload, timeout=10, proxies=None)
         if resp.status_code == 200:
             log("✅ Telegram 通知发送成功")
             return True
